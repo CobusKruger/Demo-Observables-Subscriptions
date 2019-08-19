@@ -1,0 +1,26 @@
+<h1>Subscribe/Unsubscribe</h1>
+<p>The observable will emit a prime number every second and this page will show all subscribers that it is aware of.
+    <ul>
+        <li>Each subscriber will list its prime numbers on the page.</li>
+        <li>Each subscriber will write to the console each time it receives a value.</li>
+        <li>Add or remove subscribers by clicking the corresponding buttons.</li>
+        <li>Complete the observable to stop all subscriptions from receiving any more values.</li>
+        <li>Navigate back to home to destroy this component. Come back here and check Chrome Developer Tools to verify if the subscriptions are still active.</li>
+    </ul>
+<div>
+    <button (click)="addSubscriber()">Add subscriber</button>&nbsp;
+    <button (click)="removeSubscriber()">Remove subscriber</button>&nbsp;
+    <button (click)="completeObservable()">Complete observable</button>&nbsp;
+</div>
+<h3>Subscribers <small>({{subs.length}} in total)</small></h3>
+<div class="container">
+    <!-- Contains the columns -->
+    <div class="sub" *ngFor="let sub of subs">
+        <h5>Sub {{sub.index}}</h5>
+        <!-- For each individual subscriber -->
+        <div *ngFor="let prime of sub.primes">
+            <!-- Print each prime -->
+            {{prime}}
+        </div>
+    </div>
+</div>
