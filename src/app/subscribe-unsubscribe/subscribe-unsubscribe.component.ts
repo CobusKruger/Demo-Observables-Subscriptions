@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { PrimeService, ISubEntry } from '../prime.service';
-import { Observable, Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-subscribe-unsubscribe',
